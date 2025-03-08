@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood Stock Availability</title>
+  <link href="output.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-white text-gray-800">
+
+  <!-- Header -->
+  <header class="bg-red-600 text-white">
+    <div class="container mx-auto flex justify-between items-center p-4">
+        <h1 class="text-2xl font-bold">Blood & Plasma Donation</h1>
+        <nav>
+            <ul class="flex space-x-6 p-3">
+                <div class="dropdown-container">
+                    <li><a href="home.html" class="hover:bg-red-500 rounded-md drop-down-button">About Us</a>
+
+                        <ul class="absolute bg-white text-gray-800 hidden drop-down">
+                            <li class="hover:underline cursor-pointer">Home</li>
+                            <li class="hover:underline cursor-pointer">About us</li>
+                            <li class="hover:underline cursor-pointer">Contact us</li>
+                        </ul>
+                    </li>
+                </div>
+                <div class="dropdown-container">
+                    <li><a href="donor.html" class="hover:bg-red-500 rounded-md drop-down-button">Why become
+                            Doner</a>
+                        <ul class="absolute bg-white text-gray-800 hidden drop-down">
+                            <a href="donor.html">
+                                <li class="hover:underline cursor-pointer">Documentation</li>
+                            </a>
+                            <li class="hover:underline cursor-pointer">Book an appointment</li>
+
+                        </ul>
+                    </li>
+                </div>
+                <div class="dropdown-container">
+                    <li><a href="availability.html" class="hover:bg-red-500 rounded-md drop-down-button">Search
+                            Blood</a>
+                        <ul class="absolute bg-white text-gray-800 hidden drop-down">
+                            <a href="availability.html"><li class="hover:underline cursor-pointer">Location</li></a>
+                            <li class="hover:underline cursor-pointer">Blood group</li>
+                        </ul>
+                    </li>
+                </div>
+                <div class="dropdown-container">
+                    <li><a href="biodata.html" class="hover:bg-red-500 rounded-md drop-down-button">Donate
+                            Blood</a>
+                        <ul class="absolute bg-white text-gray-800 hidden drop-down">
+                            <li class="hover:underline cursor-pointer">Add New</li>
+                            <li class="hover:underline cursor-pointer">Update Details</li>
+                            <li class="hover:underline cursor-pointer">All Donor Details</li>
+                        </ul>
+                    </li>
+                </div>
+            </ul>
+        </nav>
+        <div id="user-container">
+            <button id="register-btn">Register</button>
+            <div id="profile-section" style="display: none;">
+                <img src="profile-icon.jpg" id="profile-icon" alt="Profile">
+                <p id="user-name"></p>
+            </div>
+        </div>
+
+    </div>
+</header>
+
+  <!-- Search Section -->
+  <section class="container mx-auto mt-6 px-6">
+    <div class="bg-white shadow-md rounded-lg p-6">
+      <h2 class="text-lg font-bold text-red-600 mb-4">Search Blood Stock</h2>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <!-- State Dropdown -->
+        <select id="stateDropdown" class="block w-full border border-gray-300 rounded-lg p-2">
+          <option>Select State</option>
+        </select>
+        <!-- District Dropdown -->
+        <select id="districtDropdown" class="block w-full border border-gray-300 rounded-lg p-2">
+          <option>Select District</option>
+        </select>
+        <!-- Blood Group Dropdown -->
+        <select class="block w-full border border-gray-300 rounded-lg p-2">
+          <option>All Blood Groups</option>
+          <option>A+</option>
+          <option>A-</option>
+          <option>B+</option>
+          <option>B-</option>
+          <option>O+</option>
+          <option>O-</option>
+          <option>AB+</option>
+          <option>AB-</option>
+        </select>
+        <!-- Blood Type Dropdown -->
+        <select class="block w-full border border-gray-300 rounded-lg p-2">
+          <option>Whole Blood</option>
+          <option>Platelets</option>
+          <option>Plasma</option>
+        </select>
+      </div>
+      <div class="flex justify-end mt-4">
+        <button class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700">Search</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Results Section -->
+  <section class="container mx-auto mt-6 px-6">
+    <div class="bg-gray-200 text-center py-4 rounded-lg">
+      <p class="text-gray-700 font-medium">Select State and/or District for stock availability.</p>
+    </div>
+    <div class="mt-4">
+      <table class="table-auto w-full bg-white shadow-md rounded-lg overflow-hidden">
+        <thead class="bg-red-600 text-white">
+          <tr>
+            <th class="px-4 py-2">S.No.</th>
+            <th class="px-4 py-2">Blood Bank</th>
+            <th class="px-4 py-2">Category</th>
+            <th class="px-4 py-2">Availability</th>
+            <th class="px-4 py-2">Last Updated</th>
+            <th class="px-4 py-2">Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Example Data -->
+          <tr>
+            <td class="border px-4 py-2 text-center">1</td>
+            <td class="border px-4 py-2">Example Blood Bank</td>
+            <td class="border px-4 py-2 text-center">Government</td>
+            <td class="border px-4 py-2 text-center">10 Units</td>
+            <td class="border px-4 py-2 text-center">01-01-2025</td>
+            <td class="border px-4 py-2 text-center">Whole Blood</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white p-6 mt-12">
+    <div class="container mx-auto text-center">
+        <p>&copy; 2025 Blood and Plasma Management System. All Rights Reserved.</p>
+        <p class="text-sm mt-2">Built with care by the pGES Team.</p>
+    </div>
+</footer>
+
+  <!-- JavaScript for Dropdown Population -->
+  <script>
+    const states = [
+      "Andaman and Nicobar Islands", "Andhra Pradesh", "Arunachal Pradesh",
+      "Assam", "Bihar", "Chandigarh", "Chhattisgarh",
+      "Dadra and Nagar Haveli and Daman and Diu", "Delhi", "Goa", "Gujarat",
+      "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka"
+    ];
+
+    const stateDropdown = document.getElementById('stateDropdown');
+    states.forEach(state => {
+      const option = document.createElement('option');
+      option.textContent = state;
+      stateDropdown.appendChild(option);
+    });
+  </script>
+
+</body>
+
+</html>

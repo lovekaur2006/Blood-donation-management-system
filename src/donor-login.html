@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donor Dashboard - Blood Donation System</title>
+  <link href="output.css" rel="stylesheet">
+
+  <style>
+    body{
+      background-image: url(donor.jpg);
+    }
+  </style>
+</head>
+
+<body class="bg-gray-800 text-white">
+
+  <!-- Navbar -->
+  <header class="bg-red-600 py-4">
+    <div class="container mx-auto flex justify-between items-center px-4">
+      <h1 class="text-2xl font-bold">BDMS</h1>
+      <nav class="flex space-x-6">
+        <a href="#" class="text-white hover:underline">Home</a>
+        <a href="#" class="text-white hover:underline">Donor Dashboard</a>
+        <a href="#" class="text-white hover:underline">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Donor Dashboard -->
+  <section class="container mx-auto px-4 py-12">
+    <div class="max-w-4xl mx-auto bg-red-00 p-6 rounded-lg">
+      <h2 class="text-3xl font-bold text-center mb-6">Donor Dashboard</h2>
+
+      <!-- Personal Information Form -->
+      <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-4">Personal Information</h3>
+        <form id="donorForm" action="#" method="POST">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label for="fullName" class="block">Full Name</label>
+              <input type="text" id="fullName" name="fullName" class="w-full px-4 py-2 border rounded-md text-gray-800" required>
+            </div>
+            <div>
+              <label for="bloodType" class="block">Blood Type</label>
+              <select id="bloodType" name="bloodType" class="w-full px-4 py-2 border rounded-md text-gray-800" required>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+              </select>
+            </div>
+            <div>
+              <label for="contactNumber" class="block">Contact Number</label>
+              <input type="tel" id="contactNumber" name="contactNumber" class="w-full px-4 py-2 border rounded-md text-gray-800" required>
+            </div>
+            <div>
+              <label for="email" class="block">Email</label>
+              <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded-md text-gray-800" required>
+            </div>
+          </div>
+          <button type="submit" class="mt-4 px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Save Details</button>
+        </form>
+      </div>
+
+      <!-- Donation History (Editable) -->
+      <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-4">Donation History</h3>
+        <div class="space-y-4">
+          <div class="flex items-center">
+            <label for="donationType" class="mr-4">Donation Type:</label>
+            <select id="donationType" name="donationType" class="px-4 py-2 border rounded-md text-gray-800">
+              <option value="Whole Blood">Whole Blood</option>
+              <option value="Plasma">Plasma</option>
+              <option value="Platelets">Platelets</option>
+            </select>
+          </div>
+          <div class="flex items-center">
+            <label for="donationDate" class="mr-4">Donation Date:</label>
+            <input type="date" id="donationDate" name="donationDate" class="px-4 py-2 border rounded-md text-gray-800" required>
+          </div>
+          <div class="flex items-center">
+            <label for="donationLocation" class="mr-4">Donation Location:</label>
+            <input type="text" id="donationLocation" name="donationLocation" class="px-4 py-2 border rounded-md text-gray-800" required>
+          </div>
+          <button type="button" class="mt-4 px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700" id="addDonationButton">Add Donation</button>
+        </div>
+      </div>
+
+      <!-- Upcoming Donation -->
+      <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-4">Upcoming Donation</h3>
+        <form id="scheduleDonationForm" action="#" method="POST">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div>
+              <label for="donationDateSchedule" class="block">Schedule Date</label>
+              <input type="date" id="donationDateSchedule" name="donationDateSchedule" class="w-full px-4 py-2 border rounded-md text-gray-800" required>
+            </div>
+            <div>
+              <label for="donationLocationSchedule" class="block">Location</label>
+              <input type="text" id="donationLocationSchedule" name="donationLocationSchedule" class="w-full px-4 py-2 border rounded-md text-gray-800" required>
+            </div>
+          </div>
+          <button type="submit" class="mt-4 px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Schedule Donation</button>
+        </form>
+      </div>
+
+      <!-- Eligibility Check -->
+      <div class="mb-8">
+        <h3 class="text-xl font-semibold mb-4">Eligibility Check</h3>
+        <div>
+          <p><strong>Next Donation Eligibility:</strong> Eligible for Plasma Donation on <span id="nextDonationDate">February 10, 2024</span></p>
+          <button class="mt-4 px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">Schedule Now</button>
+        </div>
+      </div>
+
+      <!-- Notifications -->
+      <div>
+        <h3 class="text-xl font-semibold mb-4">Notifications</h3>
+        <ul class="space-y-2">
+          <li class="text-yellow-400">Reminder: You are eligible for your next plasma donation.</li>
+          <li class="text-red-400">Emergency: Blood needed urgently in your area. Please donate if possible.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 py-6 text-center text-white">
+    <p>&copy; 2024 Blood Donor Management System. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Handle form submissions
+    document.getElementById("donorForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      alert("Personal Information Saved!");
+    });
+
+    document.getElementById("addDonationButton").addEventListener("click", function() {
+      alert("Donation Added!");
+    });
+
+    document.getElementById("scheduleDonationForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      alert("Donation Scheduled!");
+    });
+  </script>
+
+</body>
+
+</html>

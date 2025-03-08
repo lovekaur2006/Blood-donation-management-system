@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donor List</title>
+  <link href="output.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-image: url(donor.jpg);
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-800 text-white">
+
+  <!-- Navbar -->
+  <header class="bg-red-600 py-4">
+    <div class="container mx-auto flex justify-between items-center px-4">
+      <h1 class="text-2xl font-bold">BDMS</h1>
+      <nav class="flex space-x-6">
+        <a href="donor-login.html" class="text-white hover:underline">Add Donor</a>
+        <a href="#" class="text-white hover:underline">Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Donor List -->
+  <div class="container mx-auto px-4 py-12">
+    <div class="bg-white text-gray-800 p-6 rounded-lg shadow-lg">
+      <h2 class="text-3xl font-bold text-center mb-6">Donor List</h2>
+      <table class="min-w-full bg-white border border-gray-200">
+        <thead>
+          <tr>
+            <th class="border px-4 py-2 text-left">Full Name</th>
+            <th class="border px-4 py-2 text-left">Blood Group</th>
+            <th class="border px-4 py-2 text-left">Contact Number</th>
+          </tr>
+        </thead>
+        <tbody id="donorTable">
+          <!-- Donor rows will be dynamically added here -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    const donorTable = document.getElementById("donorTable");
+    const donors = JSON.parse(localStorage.getItem("donors")) || [];
+
+    donors.forEach(donor => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td class="border px-4 py-2">${donor.fullName}</td>
+        <td class="border px-4 py-2">${donor.bloodType}</td>
+        <td class="border px-4 py-2">${donor.contactNumber}</td>
+      `;
+      donorTable.appendChild(row);
+    });
+  </script>
+
+</body>
+
+</html>

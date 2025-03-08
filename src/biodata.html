@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood Donor Biodata</title>
+  <link href="output.css" rel="stylesheet">
+  <style>
+    body { 
+      .bg-red-600 {
+    background-color: var(--color-red-600) /* oklch(0.577 0.245 27.325) */;
+}
+      }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-red-600">
+  <div class="bg-white shadow-lg rounded-lg p-6 w-full max-w-lg">
+    <h1 class="text-2xl font-bold text-red-600 text-center mb-4">ADD NEW DONOR</h1>
+    <form id="donorForm" class="space-y-4" action="connect.php" method="post">
+      <div>
+        <label class="block text-gray-700">New Donor ID</label>
+        <input type="number" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400" name="id">
+      </div>
+      <div>
+        <label class="block text-gray-700">Full Name</label>
+        <input type="text" id="name" placeholder="Enter your name" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400" name="name">
+      </div>
+      <div>
+        <label class="block text-gray-700">Email</label>
+        <input type="email" id="email" placeholder="Enter your email" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400" name="email">
+      </div>
+      <div>
+        <label class="block text-gray-700">Blood Group</label>
+        <input type="text" id="Blood-Group" placeholder="Enter your Blood Group" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400" name="bloodgp">
+      </div>
+      <div>
+        <label class="block text-gray-700">City</label>
+        <input type="text" id="City" placeholder="Enter your City" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400" name="city">
+      </div>
+      <div>
+        <label class="block text-gray-700">Date of Birth</label>
+        <input type="date" id="dob" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400" name="dob">
+      </div>
+      <div>
+        <label class="block text-gray-700">Mobile Number</label>
+        <input type="text" id="no" placeholder="Enter your mobile number" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400" name="mobile-no">
+      </div>
+      <div>
+        <label class="block text-gray-700">Gender</label>
+        <div class="flex items-center space-x-4">
+          <label><input type="radio" name="gender" value="Male" class="mr-1"> Male</label>
+          <label><input type="radio" name="gender" value="Female" class="mr-1"> Female</label>
+          <label><input type="radio" name="gender" value="Other" class="mr-1"> Other</label>
+        </div>
+      </div>
+      <div>
+        <label class="block text-gray-700">Complete Address</label>
+        <textarea id="address" placeholder="Enter your address" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400" name="address"></textarea>
+      </div>
+      <div class="flex justify-between mt-4">
+        <!-- <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-700">Save</button>
+        <button type="reset" class="bg-gray-400 text-white px-4 py-2 rounded-lg hover:bg-gray-600">Reset</button>
+        <button type="button" onclick="closeForm()" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-700">Close</button> -->
+        <input type="submit" class="btn btn-primary">
+      </div>
+    </form>
+  </div>
+
+  <script>
+    // document.getElementById('donorForm').addEventListener('submit', function(event) {
+    //   event.preventDefault();
+    //   alert('Donor information saved successfully!');
+    // });
+    // function closeForm() {
+    //   alert('Closing form...');
+    // }
+    document.getElementById('donorForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Collect form data
+      const donorData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        blood_gp: document.getElementById('blood-group').value,
+        city: document.getElementById('city').value,
+        dob: document.getElementById('dob').value,
+        mobile_no: document.getElementById('mobile-no').value,
+        gender: document.querySelector('input[name="gender"]:checked').value,
+        address: document.getElementById('address').value
+      };
+
+      // Send the data to the server
+      fetch('http://localhost:3000/save-donor', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(donorData),
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert('Donor information saved successfully!');
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        alert('Error saving donor information');
+      });
+    });
+
+    function closeForm() {
+      alert('Closing form...');
+    }
+  </script>
+</body>
+</html>

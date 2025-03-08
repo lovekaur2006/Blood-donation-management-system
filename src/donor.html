@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Why Become a Donor</title>
+    <link href="output.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: url(/img/background.webp) center center fixed;
+            background-size: cover;
+        }
+
+        .scroll-button {
+            position: fixed;
+            bottom: 20px;
+            background-color: #b12809;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .scroll-button:hover {
+            background-color: #c81347;
+        }
+
+        .scroll-up {
+            left: 20px;
+        }
+
+        .scroll-down {
+            right: 20px;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800">
+
+    <!-- Navigation Bar -->
+    <body class="bg-white text-gray-800">
+        <!-- Header Section -->
+        <header class="bg-red-600 text-white">
+            <div class="container mx-auto flex justify-between items-center p-4">
+                <h1 class="text-2xl font-bold">Blood & Plasma Donation</h1>
+                <nav>
+                    <ul class="flex space-x-6 p-3">
+                        <div class="dropdown-container">
+                            <li><a href="home.html" class="hover:bg-red-500 rounded-md drop-down-button">About Us</a>
+    
+                                <ul class="absolute bg-white text-gray-800 hidden drop-down">
+                                    <li class="hover:underline cursor-pointer">Home</li>
+                                    <li class="hover:underline cursor-pointer">About us</li>
+                                    <li class="hover:underline cursor-pointer">Contact us</li>
+                                </ul>
+                            </li>
+                        </div>
+                        <div class="dropdown-container">
+                            <li><a href="donor.html" class="hover:bg-red-500 rounded-md drop-down-button">Why become
+                                    Doner</a>
+                                <ul class="absolute bg-white text-gray-800 hidden drop-down">
+                                    <a href="donor.html">
+                                        <li class="hover:underline cursor-pointer">Documentation</li>
+                                    </a>
+                                    <li class="hover:underline cursor-pointer">Book an appointment</li>
+    
+                                </ul>
+                            </li>
+                        </div>
+                        <div class="dropdown-container">
+                            <li><a href="availability.html" class="hover:bg-red-500 rounded-md drop-down-button">Search
+                                    Blood</a>
+                                <ul class="absolute bg-white text-gray-800 hidden drop-down">
+                                    <a href="availability.html"><li class="hover:underline cursor-pointer">Location</li></a>
+                                    <li class="hover:underline cursor-pointer">Blood group</li>
+                                </ul>
+                            </li>
+                        </div>
+                        <div class="dropdown-container">
+                            <li><a href="biodata.html" class="hover:bg-red-500 rounded-md drop-down-button">Donate
+                                    Blood</a>
+                                <ul class="absolute bg-white text-gray-800 hidden drop-down">
+                                    <li class="hover:underline cursor-pointer">Add New</li>
+                                    <li class="hover:underline cursor-pointer">Update Details</li>
+                                    <li class="hover:underline cursor-pointer">All Donor Details</li>
+                                </ul>
+                            </li>
+                        </div>
+                    </ul>
+                </nav>
+                <div id="user-container">
+                    <button id="register-btn">Register</button>
+                    <div id="profile-section" style="display: none;">
+                        <img src="profile-icon.jpg" id="profile-icon" alt="Profile">
+                        <p id="user-name"></p>
+                    </div>
+                </div>
+    
+            </div>
+        </header>
+    <!-- Hero Section -->
+    <section class="bg-red-50 py-12 bg-opacity-80">
+        <div class="max-w-5xl mx-auto text-center">
+            <h1 class="text-4xl font-bold text-red-600 mb-4">Make a Difference Today</h1>
+            <p class="text-lg text-gray-700 mb-6">Join us in saving lives and inspiring change. Your contribution
+                matters.</p>
+            <a href="#process" class="bg-red-600 text-white px-6 py-3 rounded hover:bg-red-700">Become a Donor Now</a>
+        </div>
+    </section>
+
+    <!-- Why Become a Donor Section -->
+    <section id="about" class="max-w-5xl mx-auto my-8 p-6 bg-white bg-opacity-80 shadow-lg rounded-lg text-center">
+        <h1 class="text-3xl font-bold text-red-600 mb-4">Why Become a Donor?</h1>
+        <p class="text-lg text-gray-700 mb-6">Your contribution can make a significant impact on the lives of many.
+            Becoming a donor means you are directly helping to save lives, support communities, and inspire others to
+            give back.</p>
+
+        <div id="benefits" class="flex flex-wrap justify-center gap-6">
+            <div class="flex-1 max-w-xs p-4 bg-red-50 bg-opacity-80 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold text-red-800 mb-2">Save Lives</h3>
+                <p class="text-gray-700">Every donation contributes to saving lives and giving hope to those in need.
+                </p>
+            </div>
+            <div class="flex-1 max-w-xs p-4 bg-red-50 bg-opacity-80 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold text-red-800 mb-2">Support Communities</h3>
+                <p class="text-gray-700">Help build stronger communities by providing essential resources where they are
+                    needed most.</p>
+            </div>
+            <div class="flex-1 max-w-xs p-4 bg-red-50 bg-opacity-80 rounded-lg shadow-md">
+                <h3 class="text-xl font-semibold text-red-800 mb-2">Inspire Others</h3>
+                <p class="text-gray-700">Your generosity can inspire friends and family to join the cause and make a
+                    difference.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-12 bg-red-50 bg-opacity-80">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-red-600 mb-6">What Our Donors Say</h2>
+            <div class="flex flex-wrap justify-center gap-6">
+                <div class="max-w-sm bg-white rounded-lg shadow-lg p-6">
+                    <p class="text-gray-700 italic">"Becoming a donor has been one of the most rewarding decisions of my
+                        life. Knowing that my small contribution can save lives is incredibly fulfilling."</p>
+                    <h4 class="text-red-600 font-bold mt-4">- Sarah T.</h4>
+                    <p class="text-gray-600">Sarah is a regular donor and shares her story to inspire others to give.
+                    </p>
+                </div>
+                <div class="max-w-sm bg-white rounded-lg shadow-lg p-6">
+                    <p class="text-gray-700 italic">"I never realized how much of an impact one donation can make until
+                        I saw the results firsthand. It feels amazing to help those in need."</p>
+                    <h4 class="text-red-600 font-bold mt-4">- Michael B.</h4>
+                    <p class="text-gray-600">Michael has been a blood donor for over a year and shares his experience of
+                        how his donations have saved lives.</p>
+                </div>
+                <div class="max-w-sm bg-white rounded-lg shadow-lg p-6">
+                    <p class="text-gray-700 italic">"When I donated, I didn’t expect to hear about the difference it
+                        made. After seeing the results, I encourage everyone I know to give back."</p>
+                    <h4 class="text-red-600 font-bold mt-4">- Jessica W.</h4>
+                    <p class="text-gray-600">Jessica's story is a powerful reminder of the real-world impact of being a
+                        donor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Mission Picture Section -->
+    <section id="mission" class="py-12 bg-red-50 bg-opacity-80">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-red-600 mb-6">Our Mission</h2>
+            <p class="text-lg text-gray-700 mb-8">Our mission is to make a positive impact on the lives of others
+                through the power of generosity and compassion. Your donations help bring real change to communities in
+                need.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="/img/empowering.webp" alt="Helping Hands" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-red-800 mb-4">Empowering Communities</h3>
+                        <p class="text-gray-700">Through your donations, we provide essential resources and support to
+                            underprivileged communities, helping them thrive.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="/img/savelife.jpg" alt="Donation Impact" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-red-800 mb-4">Saving Lives</h3>
+                        <p class="text-gray-700">Every donation helps save lives, whether through medical assistance,
+                            food aid, or shelter for those in desperate need.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="/img/blood 2.jpg" alt="Community Support" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-red-800 mb-4">Building a Better Future</h3>
+                        <p class="text-gray-700">Your generosity helps provide education, healthcare, and
+                            infrastructure, building a brighter and more sustainable future for all.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Success Stories Section -->
+    <section id="success-stories" class="py-12 bg-red-50 bg-opacity-80">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-red-600 mb-6">Success Stories</h2>
+            <div class="flex flex-wrap justify-center gap-6">
+                <div class="max-w-sm bg-white rounded-lg shadow-lg p-6">
+                    <p class="text-gray-700 italic">"My donation saved a life. I am proud to be part of such a powerful
+                        cause."</p>
+                    <h4 class="text-red-600 font-bold mt-4">- Emily W.</h4>
+                </div>
+                <div class="max-w-sm bg-white rounded-lg shadow-lg p-6">
+                    <p class="text-gray-700 italic">"Every drop counts. I encourage everyone to donate and spread hope."
+                    </p>
+                    <h4 class="text-red-600 font-bold mt-4">- David R.</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How You Can Help Section -->
+    <section id="how-you-can-help" class="py-12 bg-red-50 bg-opacity-80">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-red-600 mb-6">How You Can Help</h2>
+            <p class="text-lg text-gray-700 mb-6">Donating is simple and has a long-lasting impact. Here are some ways
+                you can help:</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="p-6 bg-white rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-red-800 mb-4">Monetary Donations</h3>
+                    <p class="text-gray-700">Support the cause with your generous monetary donations, which help fund
+                        our operations and reach more people in need.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-red-800 mb-4">Become a Blood Donor</h3>
+                    <p class="text-gray-700">Donate blood and save lives. Your donation can make the difference for a
+                        patient in need.</p>
+                </div>
+                <div class="p-6 bg-white rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-red-800 mb-4">Spread the Word</h3>
+                    <p class="text-gray-700">Share our mission and encourage others to donate and become part of our
+                        movement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Process Section -->
+    <section id="process" class="bg-red-50 py-12 bg-opacity-80">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-red-600 mb-6">How to Become a Donor</h2>
+            <ol class="list-decimal text-left mx-auto max-w-2xl text-gray-700 space-y-4">
+                <li>Sign up and create your donor profile.</li>
+                <li>Schedule your donation appointment.</li>
+                <li>Visit the donation center and contribute.</li>
+                <li>Receive updates on the impact of your donation.</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="bg-red-50 py-12 bg-opacity-80">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-bold text-red-600 mb-6 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div>
+                    <h3 class="text-xl font-semibold text-red-800">Who can become a donor?</h3>
+                    <p class="text-gray-700">Anyone in good health can donate and make a difference in someone’s life.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-red-800">Is the donation process safe?</h3>
+                    <p class="text-gray-700">Absolutely! All donations are conducted under strict safety protocols.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-red-800">How often can I donate?</h3>
+                    <p class="text-gray-700">It depends on the type of donation. Contact us to learn more.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-red-600 text-white py-12 bg-opacity-90">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6">Contact Us</h2>
+            <p class="text-lg mb-6">Have any questions? We're here to help. Reach out to us through the form below or
+                contact us directly at the information provided.</p>
+
+            <div class="flex justify-center gap-8 mb-8">
+                <div class="w-1/3">
+                    <h3 class="text-xl font-semibold">Email</h3>
+                    <p class="text-gray-200">info@donorsite.com</p>
+                </div>
+                <div class="w-1/3">
+                    <h3 class="text-xl font-semibold">Phone</h3>
+                    <p class="text-gray-200">+1 (800) 123-4567</p>
+                </div>
+                <div class="w-1/3">
+                    <h3 class="text-xl font-semibold">Address</h3>
+                    <p class="text-gray-200">123 Donation St, Suite 100, City, State, 12345</p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <form action="#" method="POST" class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <div class="space-y-4">
+                    <input type="text" name="name" placeholder="Your Name"
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-red-600">
+                    <input type="email" name="email" placeholder="Your Email"
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-red-600">
+                    <textarea name="message" placeholder="Your Message" rows="4"
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-red-600"></textarea>
+                    <button type="submit" class="w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700">Send
+                        Message</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- Up and Down Scroll Buttons -->
+    <button class="scroll-button scroll-up" onclick="scrollUp()">↑</button>
+    <button class="scroll-button scroll-down" onclick="scrollDown()">↓</button>
+
+    <script>
+        // Function to scroll up
+        function scrollUp() {
+            window.scrollBy(0, -200); // Scroll up by 200px
+        }
+
+        // Function to scroll down
+        function scrollDown() {
+            window.scrollBy(0, 200); // Scroll down by 200px
+        }
+    </script>
+
+</body>
+
+</html>

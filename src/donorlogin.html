@@ -1,0 +1,148 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e-Rakt Kosh - Donor Login</title>
+    <link href="output.css" rel="stylesheet">
+
+</head>
+<body class="bg-white font-sans">
+     Header Section 
+    <header class="bg-red-600 text-white">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <h1 class="text-2xl font-bold">Blood & Plasma Donation</h1>
+            <nav>
+                <ul class="flex space-x-6 p-3">
+                    <li><a href="home.html" class="hover:bg-red-500 rounded-md">About Us</a>
+                       
+                    </li>
+                    
+                    <li><a href="donor.html" class="hover:bg-red-500 rounded-md">Why become Doner</a></li>
+                    <li><a href="availability.html" class="hover:bg-red-500 rounded-md">Search Blood</a></li>
+                    <li><a href="donorlogin.html" class="hover:bg-red-500 rounded-md">Donate Blood</a></li>
+                </ul>
+            </nav>
+            <button class="bg-white text-red-600 px-4 py-2 rounded hover:bg-gray-200">Login</button>
+
+        </div>
+    </header>
+
+
+    Main Content 
+    <main class="py-12 bg-gray-50">
+        <div class="max-w-3xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8">
+             Donor Login 
+            <div class="bg-white shadow-md rounded-lg overflow-hidden p-8">
+                <h2 class="text-2xl font-bold text-gray-800 mb-6">Donor Login</h2>
+                <form>
+                    <label for="mobile" class="block text-sm font-medium text-gray-700 mb-2">Enter Mobile No.:</label>
+                    <input type="text" id="mobile" name="mobile" class="p-3 w-full border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:outline-none" placeholder="Enter Mobile No">
+                    <button type="button" class="mt-4 bg-red-500 text-white w-full py-3 rounded-lg font-medium hover:bg-red-600">Generate OTP</button>
+                </form>
+            </div>
+
+             Register Now Section 
+            <div class="bg-white shadow-md rounded-lg overflow-hidden p-8">
+                <h3 class="text-lg font-semibold text-green-600">Register Now</h3>
+                <ul class="list-disc pl-5 text-gray-700 mt-4">
+                    <li>View/Add your Donations</li>
+                    <li>Update your Profile</li>
+                    <li>Manage your Account</li>
+                </ul>
+                <button class="mt-4 bg-red-500 text-white w-full py-3 rounded-lg font-medium hover:bg-red-600">Register Now</button>
+            </div>
+        </div>
+    </main>
+
+    Footer Section 
+    <footer class="bg-gray-800 text-gray-200 py-8">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div>
+                <h3 class="text-lg font-semibold">Looking for Blood</h3>
+                <ul class="mt-4">
+                    <li><a href="#" class="hover:underline">Blood Availability</a></li>
+                    <li><a href="#" class="hover:underline">Blood Bank Directory</a></li>
+                    <li><a href="#" class="hover:underline">Thalassemia Request</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold">Want to Donate Blood</h3>
+                <ul class="mt-4">
+                    <li><a href="#" class="hover:underline">Blood Donation Camps</a></li>
+                    <li><a href="#" class="hover:underline">Donor Login</a></li>
+                    <li><a href="#" class="hover:underline">About Blood Donation</a></li>
+                    <li><a href="#" class="hover:underline">Register VBD Camp</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold">Blood Bank Login</h3>
+                <ul class="mt-4">
+                    <li><a href="#" class="hover:underline">eRaktkosh Login</a></li>
+                    <li><a href="#" class="hover:underline">Add your Blood Bank</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-semibold">About Us</h3>
+                <ul class="mt-4">
+                    <li><a href="#" class="hover:underline">About eRaktkosh</a></li>
+                    <li><a href="#" class="hover:underline">Notifications</a></li>
+                    <li><a href="#" class="hover:underline">FAQs</a></li>
+                    <li><a href="#" class="hover:underline">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center mt-10">
+            <p>&copy; 2016-2025 by Ministry of Health and Family Welfare</p>
+            <p>Designed and Developed by CDAC</p>
+        </div>
+    </footer>
+</body>
+</html> -->
+
+<div class="bg-white shadow-md rounded-lg overflow-hidden p-8">
+    <h2 class="text-2xl font-bold text-gray-800 mb-6">Donor Registration</h2>
+    <form id="donorForm">
+        <label class="block text-sm font-medium text-gray-700 mb-2">Full Name:</label>
+        <input type="text" id="name" class="p-3 w-full border border-gray-300 rounded-lg" placeholder="Enter Name">
+
+        <label class="block text-sm font-medium text-gray-700 mt-4 mb-2">Mobile No:</label>
+        <input type="text" id="mobile" class="p-3 w-full border border-gray-300 rounded-lg"
+            placeholder="Enter Mobile No">
+
+        <label class="block text-sm font-medium text-gray-700 mt-4 mb-2">Blood Group:</label>
+        <input type="text" id="bloodGroup" class="p-3 w-full border border-gray-300 rounded-lg"
+            placeholder="Enter Blood Group">
+
+        <label class="block text-sm font-medium text-gray-700 mt-4 mb-2">City:</label>
+        <input type="text" id="city" class="p-3 w-full border border-gray-300 rounded-lg" placeholder="Enter City">
+
+        <button type="submit" class="mt-4 bg-red-500 text-white w-full py-3 rounded-lg">Register</button>
+    </form>
+</div>
+<script>
+    document.getElementById("donorForm").addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById("name").value;
+        const mobile = document.getElementById("mobile").value;
+        const bloodGroup = document.getElementById("bloodGroup").value;
+        const city = document.getElementById("city").value;
+
+        const donorData = { name, mobile, bloodGroup, city };
+
+        try {
+            const response = await fetch("http://localhost:5000/api/donor/register", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(donorData),
+            });
+
+            const data = await response.json();
+            alert(data.message);
+        } catch (error) {
+            alert("Error registering donor");
+        }
+    });
+
+</script>

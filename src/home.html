@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood & Plasma Donation</title>
+    <link href="output.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Add custom CSS for scroll animations */
+
+        .card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #home {
+            background: url(/img/kil.jpg);
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-800">
+    <!-- Header Section -->
+    <header class="bg-red-600 text-white">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <h1 class="text-2xl font-bold">Blood & Plasma Donation</h1>
+            <nav>
+                <ul class="flex space-x-6 p-3">
+                    <div class="dropdown-container">
+                        <li><a href="home.html" class="hover:bg-red-500 rounded-md drop-down-button">About Us</a>
+
+                            <ul class="absolute bg-white text-gray-800 hidden drop-down">
+                                <li class="hover:underline cursor-pointer">Home</li>
+                                <li class="hover:underline cursor-pointer">About us</li>
+                                <li class="hover:underline cursor-pointer">Contact us</li>
+                            </ul>
+                        </li>
+                    </div>
+                    <div class="dropdown-container">
+                        <li><a href="donor.html" class="hover:bg-red-500 rounded-md drop-down-button">Why become
+                                Doner</a>
+                            <ul class="absolute bg-white text-gray-800 hidden drop-down">
+                                <a href="donor.html">
+                                    <li class="hover:underline cursor-pointer">Documentation</li>
+                                </a>
+                                <li class="hover:underline cursor-pointer">Book an appointment</li>
+
+                            </ul>
+                        </li>
+                    </div>
+                    <div class="dropdown-container">
+                        <li><a href="availability.html" class="hover:bg-red-500 rounded-md drop-down-button">Search
+                                Blood</a>
+                            <ul class="absolute bg-white text-gray-800 hidden drop-down">
+                                <a href="availability.html"><li class="hover:underline cursor-pointer">Location</li></a>
+                                <li class="hover:underline cursor-pointer">Blood group</li>
+                            </ul>
+                        </li>
+                    </div>
+                    <div class="dropdown-container">
+                        <li><a href="biodata.html" class="hover:bg-red-500 rounded-md drop-down-button">Donate
+                                Blood</a>
+                            <ul class="absolute bg-white text-gray-800 hidden drop-down">
+                                <li class="hover:underline cursor-pointer">Add New</li>
+                                <li class="hover:underline cursor-pointer">Update Details</li>
+                                <li class="hover:underline cursor-pointer">All Donor Details</li>
+                            </ul>
+                        </li>
+                    </div>
+                </ul>
+            </nav>
+            <div id="user-container">
+                <button id="register-btn">Register</button>
+                <div id="profile-section" style="display: none;">
+                    <img src="profile-icon.jpg" id="profile-icon" alt="Profile">
+                    <p id="user-name"></p>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="flex items-center justify-center  py-20 bg-gray-100 min-h-screen">
+
+        <!-- <div id="registration-modal" class="modal">
+            <div class="modal-content">
+                <h3>Register</h3>
+                <label>Name:</label>
+                <input type="text" id="name" placeholder="Enter your name">
+                <label>Email:</label>
+                <input type="email" id="email" placeholder="Enter your email">
+                <label>Password:</label>
+                <input type="password" id="password" placeholder="Enter your password">
+                <button id="submit-btn">Register</button>
+            </div>
+        </div> -->
+
+        <div id="blood-group-container" class="flex flex-col items-center gap-4 p-4">
+            <!-- Blood group boxes will be generated here -->
+        </div>
+
+        <div class="text-center">
+            <h2 class="text-4xl font-bold text-red-600 mb-4">Donate Blood, Save Lives!</h2>
+            <p class="text-lg text-gray-800 mb-6">Be a hero! Join us in the mission to connect donors and recipients
+                efficiently.</p>
+            <a href="#donate" class="bg-red-600 text-white px-6 py-3 rounded hover:bg-red-700">Get Started</a>
+        </div>
+        <img src="/img/blood donate.jpg" alt="" class="hover:animate-pulse">
+    </section>
+
+    <section id="learn-about-donation" class="py-16 px-8">
+        <div class="container mx-auto text-center">
+            <h1 class="text-4xl font-bold text-red-600 mb-6">Learn About Donation</h1>
+            <p class="text-lg mb-12 max-w-3xl mx-auto">
+                The average human body contains about five liters of blood, which is made of several cellular and
+                non-cellular components such as red blood cells, platelets, and plasma.
+                Each type of component has its unique properties and can be used for different indications. The donated
+                blood is separated into these components by the blood center, and
+                one donated unit can save up to four lives depending on the number of components separated from your
+                blood.
+            </p>
+
+            <!-- Cards Section -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1: Packed Red Blood Cells -->
+                <div class="card bg-red-400 shadow-lg rounded-lg p-6">
+                    <h2 class="text-2xl font-semibold text-red-600 mb-4">Packed Red Blood Cells</h2>
+                    <p class="mb-4">
+                        <strong>What is it?</strong> Blood collected straight from the donor into a blood bag and mixed
+                        with an anticoagulant is called as whole blood. This collected whole
+                        blood is then centrifuged, and red cells, platelets, and plasma are separated.
+                    </p>
+                    <p class="mb-4">
+                        <strong>Who can donate?</strong> You need to be 18-65 years old, weigh 45kg or more, and be fit
+                        and healthy.
+                    </p>
+                    <p class="mb-4">
+                        <strong>Used For?</strong> Correction of severe anemia and blood loss in childbirth, surgery, or
+                        trauma settings.
+                    </p>
+                    <p class="mb-4">
+                        <strong>Lasts For?</strong> Red cells can be stored for 42 days at 2-6 degree Celsius.
+                    </p>
+                    <p>
+                        <strong>How often can I donate?</strong> Male donors can donate again after 90 days, and female
+                        donors can donate again after 120 days.
+                    </p>
+                </div>
+
+                <!-- Card 2: Plasma -->
+                <div class="card bg-blue-400 shadow-lg rounded-lg p-6">
+                    <h2 class="text-2xl font-semibold text-blue-600 mb-4">Plasma</h2>
+                    <p class="mb-4">
+                        <strong>What is it?</strong> Plasma is the liquid portion of blood that contains water, salts,
+                        enzymes, antibodies, and other proteins. It is separated from the blood
+                        and used for various treatments.
+                    </p>
+                    <p class="mb-4">
+                        <strong>Who can donate?</strong> Plasma donors must meet the same criteria as blood donors and
+                        should not have had recent infections or health conditions.
+                    </p>
+                    <p class="mb-4">
+                        <strong>Used For?</strong> Plasma is essential in treating clotting disorders, burns, and immune
+                        system deficiencies.
+                    </p>
+                    <p>
+                        <strong>How long does it take to donate?</strong> Plasma donation takes about 45-60 minutes.
+                    </p>
+                </div>
+
+                <!-- Card 3: Platelets -->
+                <div class="card bg-yellow-400 shadow-lg rounded-lg p-6">
+                    <h2 class="text-2xl font-semibold text-yellow-600 mb-4">Platelets</h2>
+                    <p class="mb-4">
+                        <strong>What is it?</strong> Platelets are tiny cell fragments in the blood that help with
+                        clotting. They are collected via a special process called apheresis.
+                    </p>
+                    <p class="mb-4">
+                        <strong>Who can donate?</strong> Healthy adults aged 18-60 can donate platelets, provided they
+                        meet donation criteria.
+                    </p>
+                    <p class="mb-4">
+                        <strong>Used For?</strong> Platelets are used to treat cancer patients and those with clotting
+                        disorders or undergoing major surgeries.
+                    </p>
+                    <p>
+                        <strong>How often can I donate?</strong> Platelet donors can donate every 7 days, up to 24 times
+                        a year.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container mx-auto">
+        <h1 class="text-3xl font-bold text-center text-red-600 mb-6">Compatible Blood Type Donors</h1>
+        <div class="overflow-x-auto shadow-lg rounded-lg">
+            <table class="table-auto w-full border-collapse border border-gray-300 bg-white">
+                <thead class="bg-red-600 text-white">
+                    <tr>
+                        <th class="px-4 py-2 border border-gray-300">Blood Type</th>
+                        <th class="px-4 py-2 border border-gray-300">Donate Blood To</th>
+                        <th class="px-4 py-2 border border-gray-300">Receive Blood From</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Row 1 -->
+                    <tr class="hover:bg-gray-100">
+                        <td class="px-4 py-2 border border-gray-300 text-center">A+</td>
+                        <td class="px-4 py-2 border border-gray-300 text-center">A+, AB+</td>
+                        <td class="px-4 py-2 border border-gray-300 text-center">A+, A-, O+, O-</td>
+                    </tr>
+                    <!-- Row 2 -->
+                    <tr class="bg-gray-50 hover:bg-gray-100">
+                        <td class="px-4 py-2 border border-gray-300 text-center">O+</td>
+                        <td class="px-4 py-2 border border-gray-300 text-center">O+, A+, B+, AB+</td>
+                        <td class="px-4 py-2 border border-gray-300 text-center">O+, O-</td>
+                    </tr>
+                    <!-- Row 3 -->
+                    <tr class="hover:bg-gray-100">
+                        <td class="px-4 py-2 border border-gray-300 text-center">B+</td>
+                        <td class="px-4 py-2 border border-gray-300 text-center">B+, AB+</td>
+                        <td class="px-4 py-2 border border-gray-300 text-center">B+, B-, O+, O-</td>
+                    </tr>
+                    <!-- Row 4 -->
+                    <tr class="bg-gray-50 hover:bg-gray-100">
+                        <td class="px-4 py-2 border border-gray-300 text-center">AB+</td>
+                        <td class="px-4 py-2 border border-gray-300 text-center">AB+</td>
+                        <td class="px-4 py-2 border border-gray-300 text-center">Everyone</td>
+                    </tr>
+                    <!-- Row 5 -->
+                    <tr class="hover:bg-gray-100">
+                        <td class="px-4 py-2 border border-gray-300 text-center">A-</td>
+                        <td class="px-4 py-2 border border-gray-300 text-center">A+, A-, AB+, AB-</td>
+                        <td class="px-4 py-2 border border-gray-300 text-center">A-, O-</td>
+                    </tr>
+                    <!-- Row 6 -->
+                    <tr class="bg-gray-50 hover:bg-gray-100">
+                        <td class="px-4 py-2 border border-gray-300 text-center">O-</td>
+                        <td class="px-4 py-2 border border-gray-300 text-center">Everyone</td>
+                        <td class="px-4 py-2 border border-gray-300 text-center">O-</td>
+                    </tr>
+                    <!-- Row 7 -->
+                    <tr class="hover:bg-gray-100">
+                        <td class="px-4 py-2 border border-gray-300 text-center">B-</td>
+                        <td class="px-4 py-2 border border-gray-300 text-center">B+, B-, AB+, AB-</td>
+                        <td class="px-4 py-2 border border-gray-300 text-center">B-, O-</td>
+                    </tr>
+                    <!-- Row 8 -->
+                    <tr class="bg-gray-50 hover:bg-gray-100">
+                        <td class="px-4 py-2 border border-gray-300 text-center">AB-</td>
+                        <td class="px-4 py-2 border border-gray-300 text-center">AB+, AB-</td>
+                        <td class="px-4 py-2 border border-gray-300 text-center">AB-, A-, B-, O-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-red-600">
+        <div class="container mx-auto text-center ">
+            <h3 class="text-3xl font-bold text-white mb-6">About Us</h3>
+            <p class="text-white text-lg px-4">
+                We aim to bridge the gap between blood and plasma donors and recipients by providing a centralized
+                platform to save lives in emergencies.
+            </p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-gray-100">
+        <div class="container mx-auto">
+            <h3 class="text-3xl font-bold text-center text-red-600 mb-8">Our Features</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white shadow-md rounded-lg p-6 text-center">
+                    <h4 class="text-xl font-bold text-red-600 mb-4">Real-Time Donor Search</h4>
+                    <p class="text-gray-600">Locate donors near you in real time using geolocation services.</p>
+                </div>
+                <div class="bg-white shadow-md rounded-lg p-6 text-center">
+                    <h4 class="text-xl font-bold text-red-600 mb-4">Emergency Alerts</h4>
+                    <p class="text-gray-600">Send SOS alerts to available donors during emergencies.</p>
+                </div>
+                <div class="bg-white shadow-md rounded-lg p-6 text-center">
+                    <h4 class="text-xl font-bold text-red-600 mb-4">Donation Scheduling</h4>
+                    <p class="text-gray-600">Book appointments at nearby donation centers effortlessly.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- <script src="Register.js"></script> -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto text-center">
+            <h3 class="text-3xl font-bold text-red-600 mb-6">Contact Us</h3>
+            <p class="text-gray-700 text-lg">Have questions? Reach out to us at <a
+                    href="mailto:support@blooddonation.com" class="text-red-600 underline">support@blooddonation.com</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-red-600 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Blood & Plasma Donation Management. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const registerBtn = document.getElementById("register-btn");
+            const registrationModal = document.getElementById("registration-modal");
+            const submitBtn = document.getElementById("submit-btn");
+            const profileSection = document.getElementById("profile-section");
+            const profileIcon = document.getElementById("profile-icon");
+            const userNameDisplay = document.getElementById("user-name");
+            const profileModal = document.getElementById("profile-modal");
+            const editProfileBtn = document.getElementById("edit-profile-btn");
+            const editProfileModal = document.getElementById("edit-profile-modal");
+            const saveBtn = document.getElementById("save-btn");
+
+            // Show registration modal
+            registerBtn.addEventListener("click", () => {
+                window.open("biodata.html", "_blank");
+                registrationModal.style.display = "block";
+            });
+
+            // Handle registration
+            // submitBtn.addEventListener("click", () => {
+            //     const name = document.getElementById("name").value;
+            //     const email = document.getElementById("email").value;
+            //     const password = document.getElementById("password").value;
+
+            //     if (name && email && password) {
+            //         localStorage.setItem("userName", name);
+            //         localStorage.setItem("userEmail", email);
+            //         userNameDisplay.textContent = name;
+            //         profileSection.style.display = "flex";
+            //         registerBtn.style.display = "none";
+            //         registrationModal.style.display = "none";
+            //     } else {
+            //         alert("Please fill in all fields!");
+            //     }
+            // });
+
+            // Show profile details
+            profileSection.addEventListener("click", () => {
+                document.getElementById("profile-name").textContent = localStorage.getItem("userName");
+                document.getElementById("profile-email").textContent = localStorage.getItem("userEmail");
+                document.getElementById("profile-blood").textContent = localStorage.getItem("userBlood") || "Not Provided";
+                document.getElementById("profile-contact").textContent = localStorage.getItem("userContact") || "Not Provided";
+
+                profileModal.style.display = "block";
+            });
+
+            // Open edit profile modal
+            editProfileBtn.addEventListener("click", () => {
+                editProfileModal.style.display = "block";
+                profileModal.style.display = "none";
+            });
+
+            // Save additional details
+            saveBtn.addEventListener("click", () => {
+                const bloodGroup = document.getElementById("edit-blood-group").value;
+                const contact = document.getElementById("edit-contact").value;
+
+                if (bloodGroup && contact) {
+                    localStorage.setItem("userBlood", bloodGroup);
+                    localStorage.setItem("userContact", contact);
+                    alert("Profile updated successfully!");
+                    editProfileModal.style.display = "none";
+                } else {
+                    alert("Please fill in all fields!");
+                }
+            });
+        });
+
+        const dropdownContainers = document.querySelectorAll(".dropdown-container");
+        dropdownContainers.forEach((container) => {
+            const button = container.querySelector(".drop-down-button"); // Use class instead of ID
+            const drop = container.querySelector(".drop-down"); // Use class instead of ID
+
+            // Show dropdown on mouseover
+            button.addEventListener("mouseover", () => {
+                drop.classList.remove("hidden");
+            });
+
+            // Hide dropdown on mouseout
+            button.addEventListener("mouseout", () => {
+                drop.classList.add("hidden");
+            });
+
+            // Keep dropdown open when hovering over it
+            drop.addEventListener("mouseover", () => {
+                drop.classList.remove("hidden");
+            });
+
+            // Hide dropdown on mouseout
+            drop.addEventListener("mouseout", () => {
+                drop.classList.add("hidden");
+            });
+        });
+
+        // List of all blood groups
+        const bloodGroups = ["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"];
+
+        // Data for available blood groups
+        const availableBloodGroups = ["A+", "B-", "O+"]; // Example: Dynamic data from API or backend
+
+        const container = document.getElementById("blood-group-container");
+
+        // Generate blood group boxes
+        bloodGroups.forEach((group) => {
+            const box = document.createElement("div");
+            box.className =
+                "w-24 h-12 flex items-center justify-center border-2 rounded-md text-center";
+            box.textContent = group;
+
+            // Check availability and set color
+            if (availableBloodGroups.includes(group)) {
+                box.classList.add("bg-red-500", "text-white");
+            } else {
+                box.classList.add("bg-gray-200", "text-gray-500");
+
+            }
+
+            container.appendChild(box);
+        });
+        const cards = document.querySelectorAll('.card');
+
+        const observer = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        cards.forEach(card => observer.observe(card));
+
+
+    </script>
+</body>
+
+</html>
