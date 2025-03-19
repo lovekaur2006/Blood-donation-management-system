@@ -14,62 +14,64 @@
   <!-- Header -->
   <header class="bg-red-600 text-white">
     <div class="container mx-auto flex justify-between items-center p-4">
-        <h1 class="text-2xl font-bold">Blood & Plasma Donation</h1>
-        <nav>
-            <ul class="flex space-x-6 p-3">
-                <div class="dropdown-container">
-                    <li><a href="home.html" class="hover:bg-red-500 rounded-md drop-down-button">About Us</a>
+      <h1 class="text-2xl font-bold">Blood & Plasma Donation</h1>
+      <nav>
+        <ul class="flex space-x-6 p-3">
+          <div class="dropdown-container">
+            <li><a href="home.html" class="hover:bg-red-500 rounded-md drop-down-button">About Us</a>
 
-                        <ul class="absolute bg-white text-gray-800 hidden drop-down">
-                            <li class="hover:underline cursor-pointer">Home</li>
-                            <li class="hover:underline cursor-pointer">About us</li>
-                            <li class="hover:underline cursor-pointer">Contact us</li>
-                        </ul>
-                    </li>
-                </div>
-                <div class="dropdown-container">
-                    <li><a href="donor.html" class="hover:bg-red-500 rounded-md drop-down-button">Why become
-                            Doner</a>
-                        <ul class="absolute bg-white text-gray-800 hidden drop-down">
-                            <a href="donor.html">
-                                <li class="hover:underline cursor-pointer">Documentation</li>
-                            </a>
-                            <li class="hover:underline cursor-pointer">Book an appointment</li>
+              <ul class="absolute bg-white text-gray-800 hidden drop-down">
+                <li class="hover:underline cursor-pointer">Home</li>
+                <li class="hover:underline cursor-pointer">About us</li>
+                <li class="hover:underline cursor-pointer">Contact us</li>
+              </ul>
+            </li>
+          </div>
+          <div class="dropdown-container">
+            <li><a href="donor.html" class="hover:bg-red-500 rounded-md drop-down-button">Why become
+                Doner</a>
+              <ul class="absolute bg-white text-gray-800 hidden drop-down">
+                <a href="donor.html">
+                  <li class="hover:underline cursor-pointer">Documentation</li>
+                </a>
+                <li class="hover:underline cursor-pointer">Book an appointment</li>
 
-                        </ul>
-                    </li>
-                </div>
-                <div class="dropdown-container">
-                    <li><a href="availability.html" class="hover:bg-red-500 rounded-md drop-down-button">Search
-                            Blood</a>
-                        <ul class="absolute bg-white text-gray-800 hidden drop-down">
-                            <a href="availability.html"><li class="hover:underline cursor-pointer">Location</li></a>
-                            <li class="hover:underline cursor-pointer">Blood group</li>
-                        </ul>
-                    </li>
-                </div>
-                <div class="dropdown-container">
-                    <li><a href="biodata.html" class="hover:bg-red-500 rounded-md drop-down-button">Donate
-                            Blood</a>
-                        <ul class="absolute bg-white text-gray-800 hidden drop-down">
-                            <li class="hover:underline cursor-pointer">Add New</li>
-                            <li class="hover:underline cursor-pointer">Update Details</li>
-                            <li class="hover:underline cursor-pointer">All Donor Details</li>
-                        </ul>
-                    </li>
-                </div>
-            </ul>
-        </nav>
-        <div id="user-container">
-            <button id="register-btn">Register</button>
-            <div id="profile-section" style="display: none;">
-                <img src="profile-icon.jpg" id="profile-icon" alt="Profile">
-                <p id="user-name"></p>
-            </div>
+              </ul>
+            </li>
+          </div>
+          <div class="dropdown-container">
+            <li><a href="availability.html" class="hover:bg-red-500 rounded-md drop-down-button">Search
+                Blood</a>
+              <ul class="absolute bg-white text-gray-800 hidden drop-down">
+                <a href="availability.html">
+                  <li class="hover:underline cursor-pointer">Location</li>
+                </a>
+                <li class="hover:underline cursor-pointer">Blood group</li>
+              </ul>
+            </li>
+          </div>
+          <div class="dropdown-container">
+            <li><a href="biodata.html" class="hover:bg-red-500 rounded-md drop-down-button">Donate
+                Blood</a>
+              <ul class="absolute bg-white text-gray-800 hidden drop-down">
+                <li class="hover:underline cursor-pointer">Add New</li>
+                <li class="hover:underline cursor-pointer">Update Details</li>
+                <li class="hover:underline cursor-pointer">All Donor Details</li>
+              </ul>
+            </li>
+          </div>
+        </ul>
+      </nav>
+      <div id="user-container">
+        <button id="register-btn">Register</button>
+        <div id="profile-section" style="display: none;">
+          <img src="profile-icon.jpg" id="profile-icon" alt="Profile">
+          <p id="user-name"></p>
         </div>
+      </div>
 
     </div>
-</header>
+  </header>
 
   <!-- Search Section -->
   <section class="container mx-auto mt-6 px-6">
@@ -77,13 +79,40 @@
       <h2 class="text-lg font-bold text-red-600 mb-4">Search Blood Stock</h2>
       <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
         <!-- State Dropdown -->
-        <select id="stateDropdown" class="block w-full border border-gray-300 rounded-lg p-2">
-          <option>Select State</option>
-        </select>
+        <input list="stateList" id="stateDropdown" class="block w-full border border-gray-300 rounded-lg p-2"
+          placeholder="Select or type State">
+        <datalist id="stateList">
+          <option value="Andaman and Nicobar Islands">
+          <option value="Andhra Pradesh">
+          <option value="Arunachal Pradesh">
+          <option value="Assam">
+          <option value="Bihar">
+          <option value="Chandigarh">
+          <option value="Chhattisgarh">
+          <option value="Dadra and Nagar Haveli and Daman and Diu">
+          <option value="Delhi">
+          <option value="Goa">
+          <option value="Gujarat">
+          <option value="Haryana">
+          <option value="Himachal Pradesh">
+          <option value="Jammu and Kashmir">
+          <option value="Jharkhand">
+          <option value="Karnataka">
+        </datalist>
+
         <!-- District Dropdown -->
-        <select id="districtDropdown" class="block w-full border border-gray-300 rounded-lg p-2">
-          <option>Select District</option>
-        </select>
+        <input list="districtList" id="districtDropdown" class="block w-full border border-gray-300 rounded-lg p-2"
+          placeholder="Select or type District">
+        <datalist id="districtList">
+          <option value="Bengaluru">
+          <option value="Mumbai">
+          <option value="Chennai">
+          <option value="Kolkata">
+          <option value="Hyderabad">
+          <option value="Pune">
+          <option value="Jaipur">
+          <option value="Lucknow">
+        </datalist>
         <!-- Blood Group Dropdown -->
         <select class="block w-full border border-gray-300 rounded-lg p-2">
           <option>All Blood Groups</option>
@@ -104,7 +133,10 @@
         </select>
       </div>
       <div class="flex justify-end mt-4">
-        <button class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700">Search</button>
+        <button onclick="searchDonors()" class="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700">
+          Search
+        </button>
+
       </div>
     </div>
   </section>
@@ -144,26 +176,49 @@
   <!-- Footer -->
   <footer class="bg-gray-900 text-white p-6 mt-12">
     <div class="container mx-auto text-center">
-        <p>&copy; 2025 Blood and Plasma Management System. All Rights Reserved.</p>
-        <p class="text-sm mt-2">Built with care by the pGES Team.</p>
+      <p>&copy; 2025 Blood and Plasma Management System. All Rights Reserved.</p>
+      <p class="text-sm mt-2">Built with care by the pGES Team.</p>
     </div>
-</footer>
+  </footer>
 
   <!-- JavaScript for Dropdown Population -->
   <script>
-    const states = [
-      "Andaman and Nicobar Islands", "Andhra Pradesh", "Arunachal Pradesh",
-      "Assam", "Bihar", "Chandigarh", "Chhattisgarh",
-      "Dadra and Nagar Haveli and Daman and Diu", "Delhi", "Goa", "Gujarat",
-      "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka"
-    ];
+    function searchDonors() {
+      const state = document.getElementById("stateDropdown").value;
+      const district = document.getElementById("districtDropdown").value;
 
-    const stateDropdown = document.getElementById('stateDropdown');
-    states.forEach(state => {
-      const option = document.createElement('option');
-      option.textContent = state;
-      stateDropdown.appendChild(option);
-    });
+      if (state === "Select State" || district === "Select District") {
+        alert("Please select a valid state and district.");
+        return;
+      }
+
+      fetch(`http://localhost:3000/donors?location=${district}`)
+        .then(response => response.json())
+        .then(data => {
+          const tableBody = document.querySelector("tbody");
+          tableBody.innerHTML = "";
+
+          if (data.message) {
+            tableBody.innerHTML = `<tr><td colspan="6" class="text-center text-red-600">${data.message}</td></tr>`;
+          } else {
+            data.forEach((donor, index) => {
+              const row = `
+            <tr>
+              <td class="border px-4 py-2 text-center">${index + 1}</td>
+              <td class="border px-4 py-2">${donor.name}</td>
+              <td class="border px-4 py-2 text-center">${donor.blood_group}</td>
+              <td class="border px-4 py-2 text-center">${donor.city}</td>
+              <td class="border px-4 py-2 text-center">${donor.mobile_no}</td>
+              <td class="border px-4 py-2 text-center">${donor.gender}</td>
+            </tr>
+          `;
+              tableBody.innerHTML += row;
+            });
+          }
+        })
+        .catch(error => console.error("Error fetching donors:", error));
+    }
+
   </script>
 
 </body>

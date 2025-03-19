@@ -1,3 +1,76 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Donor Form</title>
+</head>
+<body>
+    <h1>Blood Donor Registration</h1>
+    <form id="donorForm">
+        <input type="text" id="name" name="name" placeholder="Enter your name" required><br>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required><br>
+        <input type="text" id="bloodgp" name="bloodgp" placeholder="Enter your Blood Group" required><br>
+        <input type="text" id="city" name="city" placeholder="Enter your City" required><br>
+        <input type="date" id="dob" name="dob" required><br>
+        <input type="text" id="mobile_no" name="mobile_no" placeholder="Enter your mobile number" required><br>
+        <select id="gender" name="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select><br>
+        <textarea id="address" name="address" placeholder="Enter your address"></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>Donor List</h2>
+    <button onclick="fetchDonors()">Show Donors</button>
+    <ul id="donorList"></ul>
+
+    <script>
+        // Submit Form Data
+        document.getElementById("donorForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const formData = {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                bloodgp: document.getElementById("bloodgp").value,
+                city: document.getElementById("city").value,
+                dob: document.getElementById("dob").value,
+                mobile_no: document.getElementById("mobile_no").value,
+                gender: document.getElementById("gender").value,
+                address: document.getElementById("address").value
+            };
+
+            fetch("http://localhost:3000/submit", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.text())
+            .then(data => alert(data))
+            .catch(error => console.error("Error:", error));
+        });
+
+        // Fetch Donor List
+        function fetchDonors() {
+            fetch("http://localhost:3000/donors")
+                .then(response => response.json())
+                .then(data => {
+                    const donorList = document.getElementById("donorList");
+                    donorList.innerHTML = ""; // Clear previous data
+                    data.forEach(donor => {
+                        const li = document.createElement("li");
+                        li.textContent = `${donor.name} - ${donor.blood_group} - ${donor.city}`;
+                        donorList.appendChild(li);
+                    });
+                })
+                .catch(error => console.error("Error fetching donors:", error));
+        }
+    </script>
+</body>
+</html> -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,45 +79,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blood Donor Biodata</title>
   <link href="output.css" rel="stylesheet">
-  <style>
-    body { 
-      .bg-red-600 {
-    background-color: var(--color-red-600) /* oklch(0.577 0.245 27.325) */;
-}
-      }
-  </style>
 </head>
+
 <body class="flex items-center justify-center min-h-screen bg-red-600">
   <div class="bg-white shadow-lg rounded-lg p-6 w-full max-w-lg">
     <h1 class="text-2xl font-bold text-red-600 text-center mb-4">ADD NEW DONOR</h1>
     <form id="donorForm" class="space-y-4" action="connect.php" method="post">
       <div>
         <label class="block text-gray-700">New Donor ID</label>
-        <input type="number" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400" name="id">
+        <input type="number" id="id" name="id"
+          class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400">
       </div>
       <div>
         <label class="block text-gray-700">Full Name</label>
-        <input type="text" id="name" placeholder="Enter your name" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400" name="name">
+        <input type="text" id="name" name="name" placeholder="Enter your name"
+          class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400">
       </div>
       <div>
         <label class="block text-gray-700">Email</label>
-        <input type="email" id="email" placeholder="Enter your email" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400" name="email">
+        <input type="email" id="email" name="email" placeholder="Enter your email"
+          class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400">
       </div>
       <div>
         <label class="block text-gray-700">Blood Group</label>
-        <input type="text" id="Blood-Group" placeholder="Enter your Blood Group" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400" name="bloodgp">
+        <input type="text" id="bloodgp" name="bloodgp" placeholder="Enter your Blood Group"
+          class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400">
       </div>
       <div>
         <label class="block text-gray-700">City</label>
-        <input type="text" id="City" placeholder="Enter your City" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400" name="city">
+        <input type="text" id="city" name="city" placeholder="Enter your City"
+          class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400">
       </div>
       <div>
         <label class="block text-gray-700">Date of Birth</label>
-        <input type="date" id="dob" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400" name="dob">
+        <input type="date" id="dob" name="dob"
+          class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400">
       </div>
       <div>
         <label class="block text-gray-700">Mobile Number</label>
-        <input type="text" id="no" placeholder="Enter your mobile number" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400" name="mobile-no">
+        <input type="text" id="mobile_no" name="mobile_no" placeholder="Enter your mobile number"
+          class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400">
       </div>
       <div>
         <label class="block text-gray-700">Gender</label>
@@ -56,61 +130,60 @@
       </div>
       <div>
         <label class="block text-gray-700">Complete Address</label>
-        <textarea id="address" placeholder="Enter your address" class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400" name="address"></textarea>
+        <textarea id="address" name="address" placeholder="Enter your address"
+          class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400"></textarea>
       </div>
       <div class="flex justify-between mt-4">
-        <!-- <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-700">Save</button>
-        <button type="reset" class="bg-gray-400 text-white px-4 py-2 rounded-lg hover:bg-gray-600">Reset</button>
-        <button type="button" onclick="closeForm()" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-700">Close</button> -->
-        <input type="submit" class="btn btn-primary">
+        <button type="submit"
+          class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition duration-300">Submit</button>
+        <button type="reset"
+          class="bg-gray-400 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition duration-300">Reset</button>
       </div>
     </form>
   </div>
 
   <script>
-    // document.getElementById('donorForm').addEventListener('submit', function(event) {
-    //   event.preventDefault();
-    //   alert('Donor information saved successfully!');
-    // });
-    // function closeForm() {
-    //   alert('Closing form...');
-    // }
-    document.getElementById('donorForm').addEventListener('submit', function(event) {
+    document.getElementById("donorForm").addEventListener("submit", function (event) {
       event.preventDefault();
 
-      // Collect form data
-      const donorData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        blood_gp: document.getElementById('blood-group').value,
-        city: document.getElementById('city').value,
-        dob: document.getElementById('dob').value,
-        mobile_no: document.getElementById('mobile-no').value,
-        gender: document.querySelector('input[name="gender"]:checked').value,
-        address: document.getElementById('address').value
+      const gender = document.querySelector('input[name="gender"]:checked');
+      const formData = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        bloodgp: document.getElementById("bloodgp").value,
+        city: document.getElementById("city").value,
+        dob: document.getElementById("dob").value,
+        mobile_no: document.getElementById("mobile_no").value,
+        gender: gender ? gender.value : "",
+        address: document.getElementById("address").value
       };
 
-      // Send the data to the server
-      fetch('http://localhost:3000/save-donor', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(donorData),
+      fetch("http://localhost:3000/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData)
       })
-      .then(response => response.json())
-      .then(data => {
-        alert('Donor information saved successfully!');
-      })
-      .catch(error => {
-        console.error('Error:', error);
-        alert('Error saving donor information');
-      });
+        .then(response => response.text())
+        .then(data => alert(data))
+        .catch(error => console.error("Error:", error));
     });
 
-    function closeForm() {
-      alert('Closing form...');
+    function fetchDonors() {
+      fetch("http://localhost:3000/donors")
+        .then(response => response.json())
+        .then(data => {
+          const donorList = document.getElementById("donorList");
+          donorList.innerHTML = "";
+          data.forEach(donor => {
+            const li = document.createElement("li");
+            li.textContent = `${donor.name} - ${donor.bloodgp} - ${donor.city}`;
+            donorList.appendChild(li);
+          });
+        })
+        .catch(error => console.error("Error fetching donors:", error));
     }
   </script>
+
 </body>
+
 </html>
