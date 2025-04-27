@@ -11,7 +11,7 @@ app.use(express.json());
 const db = mysql.createConnection({
     host: "localhost",
     user: "root", // Default user in XAMPP
-    password: "Lovepreet@2006", // Default password (empty in XAMPP)
+    password: "", // Default password (empty in XAMPP)
     database: "blood_donor_db",
 });
 
