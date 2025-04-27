@@ -86,9 +86,9 @@
     <h1 class="text-2xl font-bold text-red-600 text-center mb-4">ADD NEW DONOR</h1>
     <form id="donorForm" class="space-y-4" action="connect.php" method="post">
       <div>
-        <label class="block text-gray-700">New Donor ID</label>
+        <!-- <label class="block text-gray-700">New Donor ID</label>
         <input type="number" id="id" name="id"
-          class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400">
+          class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400"> -->
       </div>
       <div>
         <label class="block text-gray-700">Full Name</label>
@@ -106,8 +106,8 @@
           class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400">
       </div>
       <div>
-        <label class="block text-gray-700">City</label>
-        <input type="text" id="city" name="city" placeholder="Enter your City"
+        <label class="block text-gray-700">District</label>
+        <input type="text" id="district" name="district" placeholder="Enter your District"
           class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400">
       </div>
       <div>
@@ -129,8 +129,8 @@
         </div>
       </div>
       <div>
-        <label class="block text-gray-700">Complete Address</label>
-        <textarea id="address" name="address" placeholder="Enter your address"
+        <label class="block text-gray-700">State</label>
+        <textarea id="state" name="state" placeholder="Enter your state"
           class="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400"></textarea>
       </div>
       <div class="flex justify-between mt-4">
@@ -143,6 +143,7 @@
   </div>
 
   <script>
+    
     document.getElementById("donorForm").addEventListener("submit", function (event) {
       event.preventDefault();
 
@@ -151,11 +152,11 @@
         name: document.getElementById("name").value,
         email: document.getElementById("email").value,
         bloodgp: document.getElementById("bloodgp").value,
-        city: document.getElementById("city").value,
+        district: document.getElementById("district").value,
         dob: document.getElementById("dob").value,
         mobile_no: document.getElementById("mobile_no").value,
         gender: gender ? gender.value : "",
-        address: document.getElementById("address").value
+        state: document.getElementById("state").value
       };
 
       fetch("http://localhost:3000/submit", {
@@ -176,7 +177,7 @@
           donorList.innerHTML = "";
           data.forEach(donor => {
             const li = document.createElement("li");
-            li.textContent = `${donor.name} - ${donor.bloodgp} - ${donor.city}`;
+            li.textContent = `${donor.name} - ${donor.bloodgp} - ${donor.district}`;
             donorList.appendChild(li);
           });
         })

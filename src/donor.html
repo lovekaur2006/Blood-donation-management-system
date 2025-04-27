@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Why Become a Donor</title>
     <link href="output.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             background: url(/img/background.webp) center center fixed;
@@ -40,76 +40,79 @@
     </style>
 </head>
 
-<body class="bg-white text-gray-800">
 
-    <!-- Navigation Bar -->
-    <body class="bg-white text-gray-800">
-        <!-- Header Section -->
-        <header class="bg-red-600 text-white">
-            <div class="container mx-auto flex justify-between items-center p-4">
-                <h1 class="text-2xl font-bold">Blood & Plasma Donation</h1>
-                <nav>
-                    <ul class="flex space-x-6 p-3">
-                        <div class="dropdown-container">
-                            <li><a href="home.html" class="hover:bg-red-500 rounded-md drop-down-button">About Us</a>
-    
-                                <ul class="absolute bg-white text-gray-800 hidden drop-down">
-                                    <li class="hover:underline cursor-pointer">Home</li>
-                                    <li class="hover:underline cursor-pointer">About us</li>
-                                    <li class="hover:underline cursor-pointer">Contact us</li>
-                                </ul>
-                            </li>
-                        </div>
-                        <div class="dropdown-container">
-                            <li><a href="donor.html" class="hover:bg-red-500 rounded-md drop-down-button">Why become
-                                    Doner</a>
-                                <ul class="absolute bg-white text-gray-800 hidden drop-down">
-                                    <a href="donor.html">
-                                        <li class="hover:underline cursor-pointer">Documentation</li>
-                                    </a>
-                                    <li class="hover:underline cursor-pointer">Book an appointment</li>
-    
-                                </ul>
-                            </li>
-                        </div>
-                        <div class="dropdown-container">
-                            <li><a href="availability.html" class="hover:bg-red-500 rounded-md drop-down-button">Search
-                                    Blood</a>
-                                <ul class="absolute bg-white text-gray-800 hidden drop-down">
-                                    <a href="availability.html"><li class="hover:underline cursor-pointer">Location</li></a>
-                                    <li class="hover:underline cursor-pointer">Blood group</li>
-                                </ul>
-                            </li>
-                        </div>
-                        <div class="dropdown-container">
-                            <li><a href="biodata.html" class="hover:bg-red-500 rounded-md drop-down-button">Donate
-                                    Blood</a>
-                                <ul class="absolute bg-white text-gray-800 hidden drop-down">
-                                    <li class="hover:underline cursor-pointer">Add New</li>
-                                    <li class="hover:underline cursor-pointer">Update Details</li>
-                                    <li class="hover:underline cursor-pointer">All Donor Details</li>
-                                </ul>
-                            </li>
-                        </div>
-                    </ul>
-                </nav>
-                <div id="user-container">
-                    <button id="register-btn">Register</button>
-                    <div id="profile-section" style="display: none;">
-                        <img src="profile-icon.jpg" id="profile-icon" alt="Profile">
-                        <p id="user-name"></p>
+
+<body class="bg-white text-gray-800">
+    <!-- Header Section -->
+    <header class="bg-red-600 text-white">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <h1 class="text-2xl font-bold">Blood & Plasma Donation</h1>
+            <nav>
+                <ul class="flex space-x-6 p-3">
+                    <div class="dropdown-container">
+                        <li><a href="home.html" class="hover:bg-red-500 rounded-md drop-down-button">About Us</a>
+
+                            <ul class="absolute bg-white text-gray-800 hidden drop-down">
+                                <li class="hover:underline cursor-pointer"></li>
+                                <li class="hover:underline cursor-pointer"></li>
+                                <li class="hover:underline cursor-pointer"></li>
+                            </ul>
+                        </li>
                     </div>
+                    <div class="dropdown-container">
+                        <li><a href="donor.html" class="hover:bg-red-500 rounded-md drop-down-button">Why become
+                                Doner</a>
+                            <ul class="absolute bg-white text-gray-800 hidden drop-down">
+                                <a href="donor.html">
+                                    <li class="hover:underline cursor-pointer"></li>
+                                </a>
+                                <li class="hover:underline cursor-pointer"></li>
+
+                            </ul>
+                        </li>
+                    </div>
+                    <div class="dropdown-container">
+                        <li><a href="availability.html" class="hover:bg-red-500 rounded-md drop-down-button">Search
+                                Blood</a>
+                            <ul class="absolute bg-white text-gray-800 hidden drop-down">
+                                <a href="availability.html">
+                                    <li class="hover:underline cursor-pointer"></li>
+                                </a>
+                                <li class="hover:underline cursor-pointer"></li>
+                            </ul>
+                        </li>
+                    </div>
+                    <div class="dropdown-container">
+                        <li><a href="biodata.html" class="hover:bg-red-500 rounded-md drop-down-button">Donate
+                                Blood</a>
+                            <ul class="absolute bg-white text-gray-800 hidden drop-down">
+                                <li class="hover:underline cursor-pointer"></li>
+                                <li class="hover:underline cursor-pointer"></li>
+                                <li class="hover:underline cursor-pointer"></li>
+                            </ul>
+                        </li>
+                    </div>
+                </ul>
+            </nav>
+            <div id="user-container">
+                <button id="register-btn">Register</button>
+                <div id="profile-section" style="display: none;">
+                    <img src="profile-icon.jpg" id="profile-icon" alt="Profile">
+                    <p id="user-name"></p>
                 </div>
-    
             </div>
-        </header>
+
+        </div>
+    </header>
+
     <!-- Hero Section -->
     <section class="bg-red-50 py-12 bg-opacity-80">
         <div class="max-w-5xl mx-auto text-center">
             <h1 class="text-4xl font-bold text-red-600 mb-4">Make a Difference Today</h1>
             <p class="text-lg text-gray-700 mb-6">Join us in saving lives and inspiring change. Your contribution
                 matters.</p>
-            <a href="#process" class="bg-red-600 text-white px-6 py-3 rounded hover:bg-red-700">Become a Donor Now</a>
+            <a href="biodata.html" class="bg-red-600 text-white px-6 py-3 rounded hover:bg-red-700">Become a Donor
+                Now</a>
         </div>
     </section>
 
@@ -328,6 +331,14 @@
     <button class="scroll-button scroll-down" onclick="scrollDown()">↓</button>
 
     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const registerBtn = document.getElementById("register-btn");
+            const registrationModal = document.getElementById("registration-modal");
+            registerBtn.addEventListener("click", () => {
+                window.open("biodata.html", "_blank");
+                registrationModal.style.display = "block";
+            });
+        });
         // Function to scroll up
         function scrollUp() {
             window.scrollBy(0, -200); // Scroll up by 200px

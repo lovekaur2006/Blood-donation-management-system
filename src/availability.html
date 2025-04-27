@@ -6,12 +6,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blood Stock Availability</title>
   <link href="output.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 
+  <style>
+    /* Add custom CSS for scroll animations */
+
+    .card {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s ease-in-out;
+    }
+
+    .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #home {
+      background: url(/img/kil.jpg);
+    }
+  </style>
 </head>
 
 <body class="bg-white text-gray-800">
-
-  <!-- Header -->
+  <!-- Header Section -->
   <header class="bg-red-600 text-white">
     <div class="container mx-auto flex justify-between items-center p-4">
       <h1 class="text-2xl font-bold">Blood & Plasma Donation</h1>
@@ -73,6 +91,7 @@
     </div>
   </header>
 
+
   <!-- Search Section -->
   <section class="container mx-auto mt-6 px-6">
     <div class="bg-white shadow-md rounded-lg p-6">
@@ -114,7 +133,7 @@
           <option value="Lucknow">
         </datalist>
         <!-- Blood Group Dropdown -->
-        <select class="block w-full border border-gray-300 rounded-lg p-2">
+        <select class="block w-full border border-gray-300 rounded-lg p-2" id="bloodgp">
           <option>All Blood Groups</option>
           <option>A+</option>
           <option>A-</option>
@@ -151,11 +170,11 @@
         <thead class="bg-red-600 text-white">
           <tr>
             <th class="px-4 py-2">S.No.</th>
-            <th class="px-4 py-2">Blood Bank</th>
-            <th class="px-4 py-2">Category</th>
-            <th class="px-4 py-2">Availability</th>
-            <th class="px-4 py-2">Last Updated</th>
-            <th class="px-4 py-2">Type</th>
+            <th class="px-4 py-2">Name</th>
+            <th class="px-4 py-2">Blood Group</th>
+            <th class="px-4 py-2">Address</th>
+            <th class="px-4 py-2">Phone Number</th>
+            <th class="px-4 py-2">Gender</th>
           </tr>
         </thead>
         <tbody>
@@ -183,16 +202,25 @@
 
   <!-- JavaScript for Dropdown Population -->
   <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const registerBtn = document.getElementById("register-btn");
+      const registrationModal = document.getElementById("registration-modal");
+      registerBtn.addEventListener("click", () => {
+        window.open("biodata.html", "_blank");
+        registrationModal.style.display = "block";
+      });
+    });
     function searchDonors() {
       const state = document.getElementById("stateDropdown").value;
       const district = document.getElementById("districtDropdown").value;
+      const bloodGroup = document.getElementById("bloodgp").value;
 
       if (state === "Select State" || district === "Select District") {
         alert("Please select a valid state and district.");
         return;
       }
-
-      fetch(`http://localhost:3000/donors?location=${district}`)
+      const url = `http://localhost:3000/donors?state=${state}&district=${district}&blood_group=${bloodGroup}`;
+      fetch(url)
         .then(response => response.json())
         .then(data => {
           const tableBody = document.querySelector("tbody");
@@ -207,7 +235,7 @@
               <td class="border px-4 py-2 text-center">${index + 1}</td>
               <td class="border px-4 py-2">${donor.name}</td>
               <td class="border px-4 py-2 text-center">${donor.blood_group}</td>
-              <td class="border px-4 py-2 text-center">${donor.city}</td>
+              <td class="border px-4 py-2 text-center">${donor.district}</td>
               <td class="border px-4 py-2 text-center">${donor.mobile_no}</td>
               <td class="border px-4 py-2 text-center">${donor.gender}</td>
             </tr>
